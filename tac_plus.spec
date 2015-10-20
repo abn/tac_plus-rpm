@@ -56,6 +56,9 @@ install -D -m 600 %{SOURCE1} %{buildroot}%{_sysconfdir}/tac_plus.conf
 install -D -m 600 %{SOURCE2} %{buildroot}%{_sysconfdir}/sysconfig/tac_plus
 install -D -m 600 %{SOURCE3} %{buildroot}%{_unitdir}/tac_plus.service
 
+install -d %{buildroot}/var/log
+touch %{buildroot}/var/log/tac_plus.{log,acct}
+
 %post
 %systemd_post tac_plus.service
 
@@ -84,6 +87,8 @@ install -D -m 600 %{SOURCE3} %{buildroot}%{_unitdir}/tac_plus.service
 %{_datarootdir}/tacacs/do_auth.pyo
 %{_datarootdir}/tacacs/tac_convert
 %{_datarootdir}/tacacs/users_guide
+/var/log/tac_plus.log
+/var/log/tac_plus.acct
 
 %files devel
 %{_includedir}/tacacs.h
