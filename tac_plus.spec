@@ -3,7 +3,7 @@
 Summary: TACACS+ daemon
 Name: tac_plus
 Version: F4.0.4.28
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: Cisco
 Group: Networking/Servers
 Source0: ftp://ftp.shrubbery.net/pub/tac_plus/tacacs-%{version}.tar.gz
@@ -94,6 +94,10 @@ touch %{buildroot}/var/log/tac_plus.{log,acct}
 %{_includedir}/tacacs.h
 
 %changelog
+* Tue Oct 20 2015 Arun Babu Neelicattu <arun.neelicattu@gmail.com> - F4.0.4.28-2
+- Ensure log files are created
+- Log to /dev/console when starting via systemd
+
 * Tue Oct 20 2015 Arun Babu Neelicattu <arun.neelicattu@gmail.com> - F4.0.4.28-1
 - Initial release for F4.0.4.28
 
