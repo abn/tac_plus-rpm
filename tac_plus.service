@@ -1,0 +1,17 @@
+[Unit]
+Description=TACACS+ Daemon
+Documentation=http://www.shrubbery.net/tac_plus/
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/sysconfig/tac_plus
+ExecStart=/usr/sbin/tac_plus -G \
+          -C ${CONFIG_FILE} \
+          -B ${BIND_ADDRESS} \
+          -p ${PORT} \
+          -l ${LOG_FILE} \
+          $OPTIONS
+
+[Install]
+WantedBy=multi-user.target
+

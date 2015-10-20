@@ -1,0 +1,13 @@
+# /etc/sysconfig/tac_plus
+
+CONFIG_FILE=/etc/tac_plus.conf
+LOG_FILE=/var/log/tac_plus.log
+
+# bind address used by the tacacs+ daemon
+BIND_ADDRESS=127.0.0.1
+
+# port to use
+PORT=49
+
+# extra options to be passed when starting the daemon
+OPTIONS=
