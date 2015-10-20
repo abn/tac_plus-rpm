@@ -4,8 +4,9 @@ Documentation=http://www.shrubbery.net/tac_plus/
 After=network.target
 
 [Service]
+PIDFile=/var/run/tac_plus.pid
 EnvironmentFile=-/etc/sysconfig/tac_plus
-ExecStart=/usr/sbin/tac_plus -G \
+ExecStart=/usr/sbin/tac_plus -G -t \
           -C ${CONFIG_FILE} \
           -B ${BIND_ADDRESS} \
           -p ${PORT} \
